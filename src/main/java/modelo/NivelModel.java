@@ -1,0 +1,46 @@
+package modelo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import conexion.MySQLCnn;
+import entidad.Horario;
+import entidad.Nivel;
+import interfaces.NivelInterface;
+
+public class NivelModel implements NivelInterface {
+
+	@Override
+	public List<Nivel> listado() {
+		ResultSet rs = null;
+		Connection con = null;
+		PreparedStatement pst = null;
+		List<Nivel> lista = new ArrayList<Nivel>();
+		try {
+			con = MySQLCnn.getCnn();
+			String sql = "SELECT * FROM nivel";
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				Nivel n = new Nivel();
+				n.setIdNivel(rs.getInt(1));
+				n.setNombre(rs.getString(2));
+				lista.add(n);
+			}
+		} catch (Exception e) {
+			System.out.println("Error en la sentencia listado: " + e.getMessage());
+		} finally {
+			try {
+				if(con != null) con.close();
+				if(pst != null) pst.close();
+			} catch (Exception e2) {
+				System.out.println("Error al cerrar la conexion: " + e2.getMessage());
+			}
+		}
+		return lista;
+	}
+	
+}

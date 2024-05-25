@@ -1,0 +1,65 @@
+main {
+  flex-grow: 1;
+  width: calc(100% - 256px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #ACEDFF;
+  padding: 30px;
+}
+
+main h1 {
+	text-align: center;
+	font-weight: bold;
+	color: #028090;
+}
+
+main h2 {
+	color: #028090;
+}
+
+main .div-stats {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+main .stat {
+	width: 100%;
+	height: 30vh;
+	background-color: #89BBFE;
+	border-radius: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	border: 2px solid white;
+}
+
+main h3 {
+	color: #374A67;
+	font-size: 1.8em;
+	text-align: center;
+}
+
+main p {
+	font-size: 4em;
+	font-weight: bold;
+}
+
+.carousel{
+   height: 45vh;
+   border-radius: 10px;
+}
+
+.carousel-inner{
+   height: 100%;
+}
+
+.carousel-inner img {
+  width: auto; /* Establece el ancho de la imagen a automático */
+  height: 100%;
+}

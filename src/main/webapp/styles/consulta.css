@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rochester&display=swap');
+
+main {
+  flex-grow: 1;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+main .main-contenido {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 0 0 0;
+}
+
+main .botones-inciales {
+  display: flex;
+  gap: 20px;
+  height: 50px;
+
+  && .input-buscar {
+    width: 210px;
+    height: 100%;
+  }
+}
+
+main .boton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  && .icono {
+    font-size: 20px;
+  }
+}
+
+main .tabla {
+  max-height: calc(100vh - 200px);
+  padding: 15px 0 15px 0;
+  overflow: auto;
+}
+
+main .td-boton {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+main .form-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.354);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform .3s;
+  z-index: 1;
+}
+
+main .form-fondo.form-active {
+  transform: translateY(0%);
+}
+
+main .form-div {
+  width: 600px;
+  background-color: white;
+  padding: 50px 30px;
+  border-radius: 10px;
+}
+
+.title-option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-option h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.title-option .icon-close {
+  max-width: 30px;
+  max-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.title-option .icon-close i {
+  font-size: 30px;
+}
